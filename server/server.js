@@ -6,13 +6,13 @@ const cors=require("cors");
 
 const app = express();
 
-app.use(cors(
-    {
-        origin:["https://stonks-frontend-three.vercel.app"],
-        methods:["POST","GET"],
-        credentials:true
-    }
-));
+const corsOptions ={
+   origin:'*', 
+   credentials:true,
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
 app.use(express.urlencoded({extended:true}));
 
 const API_KEY = process.env.API_KEY;

@@ -25,7 +25,7 @@ export function CountryNews(props) {
     let pageSize = 16;
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:3000/country-headlines/${params.iso}?page=${page}&pageSize=${pageSize}`)
+        fetch(`https://stonks-backend-one.vercel.app/country-headlines/${params.iso}?page=${page}&pageSize=${pageSize}`)
             .then(response => {
                 if(response.ok) {
                     return response.json();

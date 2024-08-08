@@ -21,7 +21,7 @@ export function Home(props) {
     let pageSize = 16;
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:3000/local-news?page=${page}&pageSize=${pageSize}`)
+        fetch(`https://stonks-backend-one.vercel.app/local-news?page=${page}&pageSize=${pageSize}`)
             .then(response => {
                 if (response.ok) {
                     console.log("inside first then");

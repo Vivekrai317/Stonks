@@ -23,7 +23,7 @@ export function AllNews(props) {
     let pageSize = 16;
     useEffect(() => {
         setLoading(true)
-        fetch(`http://localhost:3000/top-headlines?page=${page}&pageSize=${pageSize}`)
+        fetch(`https://stonks-backend-one.vercel.app/top-headlines?page=${page}&pageSize=${pageSize}`)
             .then(response => {
                 if(response.ok) {
                     console.log("inside first then");

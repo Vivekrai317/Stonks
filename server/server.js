@@ -2,17 +2,10 @@ require("dotenv").config();
 
 const express=require("express");
 const axios=require("axios");
-const cors=require("cors");
-
 const app = express();
 
-const corsOptions ={
-   origin:'*', 
-   credentials:true,
-   optionSuccessStatus:200,
-}
-
-app.use(cors(corsOptions))
+const cors = require('cors');
+app.use(cors({ origin: 'https://stonks-frontend-three.vercel.app' }));
 app.use(express.urlencoded({extended:true}));
 app.use(function (req, res, next) {
    res.header("Access-Control-Allow-Origin", "*");

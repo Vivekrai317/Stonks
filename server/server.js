@@ -5,13 +5,11 @@ const axios=require("axios");
 const app = express();
 
 const cors = require('cors');
-app.use(cors({ origin: 'https://stonks-frontend-three.vercel.app' }));
-app.use(express.urlencoded({extended:true}));
-app.use(function (req, res, next) {
-   res.header("Access-Control-Allow-Origin", "*");
-   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-   next();
-})
+app.use(cors({
+  origin: '*', // Be cautious with this in production
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 const API_KEY = process.env.API_KEY;
 
 function fetchNews(url,res){

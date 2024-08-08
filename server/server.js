@@ -5,6 +5,8 @@ const axios=require("axios");
 const app = express();
 
 const cors = require('cors');
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cors({
   origin: '*', // Be cautious with this in production
   methods: ['GET', 'POST', 'OPTIONS'],
